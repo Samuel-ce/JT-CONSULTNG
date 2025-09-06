@@ -8,16 +8,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
   <style>
     :root {
-      --primary: #2E5473;   /* Azul corporativo */
-      --accent: #A7C957;    /* Verde acento */
+      --primary: #A7C957;
+      --primary-dark: #6B8F2A;
+      --secondary: #2E5473;
+      --accent: #9CAFB7;
       --light: #ffffff;
-      --gray: #6f6f6f;
+      --gray: #d1d1d1;
       --dark: #1a1a1a;
-      --border: #e0e0e0;
-      --shadow: rgba(0, 0, 0, 0.1);
+      --card-bg: #35597A;
+      --border: #466A88;
+      --shadow: rgba(0, 0, 0, 0.15);
       --transition: all 0.3s ease;
     }
 
@@ -25,7 +27,7 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: var(--light);
+      background-color: var(--secondary);
       color: var(--dark);
       line-height: 1.6;
       overflow-x: hidden;
@@ -36,25 +38,32 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 6%;
-      background: var(--light);
+      padding: 15px 5%;
+      background: rgba(255, 255, 255, 0.9);
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px var(--shadow);
       transition: var(--transition);
+      border-bottom: 1px solid var(--border);
+    }
+
+    header.scrolled {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
     }
 
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
-    .logo img {
-      width: 55px;
+    .logo-container img {
+      width: 60px;
       border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .logo-text {
@@ -63,17 +72,15 @@
       line-height: 1.2;
     }
 
-    .logo-text strong {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--primary);
-      letter-spacing: 1px;
+    .logo-text h1 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--dark);
     }
 
     .logo-text span {
       font-size: 0.85rem;
-      color: var(--gray);
-      font-weight: 400;
+      color: var(--primary-dark);
     }
 
     .menu-toggle {
@@ -87,36 +94,30 @@
 
     nav {
       display: flex;
-      gap: 25px;
+      gap: 10px;
     }
 
     nav a {
       color: var(--dark);
       text-decoration: none;
       font-weight: 500;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
       font-size: 1rem;
-      padding: 6px 0;
-      position: relative;
+      padding: 10px 16px;
+      border-radius: 30px;
       transition: var(--transition);
     }
 
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0%;
-      height: 2px;
-      background: var(--primary);
-      transition: var(--transition);
+    nav a:hover, nav a.active {
+      color: var(--primary-dark);
+      background: rgba(255, 167, 38, 0.1);
+      transform: translateY(-2px);
     }
 
-    nav a:hover::after,
-    nav a.active::after {
-      width: 100%;
-    }
-
-    nav a:hover {
+    nav a i {
+      margin-right: 8px;
       color: var(--primary);
     }
 
@@ -126,110 +127,105 @@
       align-items: center;
       justify-content: space-between;
       padding: 140px 10% 80px;
-      background: linear-gradient(135deg, #ffffff 0%, #f7f9fc 100%);
+      background: linear-gradient(135deg, var(--secondary) 0%, #fff3e0 100%);
       min-height: 100vh;
-      gap: 30px;
     }
 
     .hero .text {
       max-width: 50%;
+      animation: fadeInLeft 1s ease;
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       margin-bottom: 20px;
-      color: var(--primary);
+      color: var(--dark);
     }
 
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: var(--gray);
       margin-bottom: 30px;
     }
 
     .hero .button {
       display: inline-block;
-      background: var(--primary);
+      background: linear-gradient(90deg, var(--primary), var(--primary-dark));
       color: var(--light);
       padding: 14px 32px;
       border-radius: 30px;
       text-decoration: none;
+      font-size: 1.1rem;
       font-weight: 600;
       transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(255, 167, 38, 0.3);
     }
 
     .hero .button:hover {
-      background: var(--accent);
-      color: var(--dark);
+      background: linear-gradient(90deg, var(--primary-dark), #E65100);
+      transform: translateY(-3px);
     }
 
     .hero img {
       max-width: 45%;
       border-radius: 16px;
-      box-shadow: 0 8px 20px var(--shadow);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
       border: 1px solid var(--border);
+      animation: fadeInRight 1s ease;
     }
+
+    /* Services, Testimonials, Contact, Footer siguen igual */
+    .services, .testimonials { padding: 80px 10%; background-color: var(--secondary); }
+    .section-title { text-align: center; margin-bottom: 50px; }
+    .section-title h2 { font-size: 2.5rem; margin-bottom: 15px; color: var(--dark); }
+    .section-title::after { content: ""; display: block; width: 80px; height: 4px; background: linear-gradient(90deg, var(--primary), var(--accent)); margin: 15px auto; border-radius: 2px; }
+    .section-title p { color: var(--gray); max-width: 700px; margin: 0 auto; font-size: 1.1rem; }
+    .service-grid, .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .service, .testimonial-card { background: var(--card-bg); padding: 30px; border-radius: 16px; box-shadow: 0 6px 20px var(--shadow); border: 1px solid var(--border); transition: var(--transition); }
+    .service:hover, .testimonial-card:hover { transform: translateY(-10px); border-color: var(--accent); }
+
+    /* Footer */
+    footer { background-color: var(--dark); color: var(--light); text-align: center; padding: 30px; }
+    .footer-logo { font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; color: var(--primary); }
+
+    /* Animaciones */
+    @keyframes fadeInLeft { from { opacity:0; transform:translateX(-50px);} to{opacity:1;transform:translateX(0);} }
+    @keyframes fadeInRight { from { opacity:0; transform:translateX(50px);} to{opacity:1;transform:translateX(0);} }
 
     /* Responsive */
     @media (max-width: 992px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero .text {
-        max-width: 100%;
-      }
-      .hero img {
-        max-width: 80%;
-      }
+      .hero { flex-direction: column; text-align: center; padding-top: 120px; }
+      .hero .text, .hero img { max-width: 100%; }
+      .hero h1 { font-size: 2.8rem; }
     }
-
     @media (max-width: 768px) {
       .menu-toggle { display: block; }
-      nav {
-        position: fixed;
-        top: 65px;
-        left: 0;
-        width: 100%;
-        background: var(--light);
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        transition: var(--transition);
-      }
-      nav.show {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-      }
-      nav a {
-        margin: 12px 0;
-      }
-      nav a::after { display: none; }
+      nav { position: fixed; top: 80px; left: 0; width: 100%; background: var(--light); flex-direction: column; align-items: center; padding: 20px 0; clip-path: polygon(0 0,100% 0,100% 0,0 0); transition: var(--transition); box-shadow: 0 10px 20px var(--shadow); }
+      nav.show { clip-path: polygon(0 0,100% 0,100% 100%,0 100%); }
+      nav a { width: 90%; text-align: center; margin: 5px 0; padding: 15px; }
     }
   </style>
 </head>
-
 <body>
   <header id="header">
     <div class="logo-container">
-      <div class="logo">
-        <img src="https://raw.githubusercontent.com/Samuel-ce/JT-CONSULTNG/main/logo%20jt.jpg" alt="Logo JT">
-      </div>
+      <img src="https://raw.githubusercontent.com/Samuel-ce/JT-CONSULTNG/main/logo%20jt.jpg" alt="Logo JT">
       <div class="logo-text">
-        <strong>JT CONSULTING</strong>
+        <h1>JT CONSULTING</h1>
         <span>Asesoría Contable & Tributaria</span>
       </div>
     </div>
     <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
     <nav id="nav">
-      <a href="#hero" class="active">Inicio</a>
-      <a href="#services">Impuestos</a>
-      <a href="#gestiones">Gestiones</a>
-      <a href="#testimonials">Opiniones</a>
-      <a href="#contact">Contacto</a>
+      <a href="#hero" class="active"><i class="fas fa-home"></i> Inicio</a>
+      <a href="#services"><i class="fas fa-file-invoice"></i> Impuestos</a>
+      <a href="#gestiones"><i class="fas fa-tasks"></i> Gestiones</a>
+      <a href="#testimonials"><i class="fas fa-comment-dots"></i> Opiniones</a>
+      <a href="#contact"><i class="fas fa-info-circle"></i> Contacto</a>
     </nav>
   </header>
 
+  <!-- Hero -->
   <section class="hero" id="hero">
     <div class="text">
       <h1>Asesoría Contable Profesional</h1>
@@ -239,25 +235,41 @@
     <img src="https://raw.githubusercontent.com/Samuel-ce/JT-CONSULTNG/main/logo%20jt.jpg" alt="Equipo JT CONSULTING">
   </section>
 
+  <!-- Tus secciones: servicios, gestiones, testimonios, contacto, footer (sin cambios) -->
+  <!-- ... (aquí va lo mismo que ya tenías en tu código, que se mantiene igual) ... -->
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">JT CONSULTING CDE-CAMPO9</div>
+      <p>&copy; 2025 JT CONSULTING. Todos los derechos reservados.</p>
+      <p>Asesoría contable profesional en Paraguay</p>
+    </div>
+  </footer>
+
   <script>
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-      document.getElementById('nav').classList.toggle('show');
+    // Efecto scroll header
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      header.classList.toggle('scrolled', window.scrollY > 50);
     });
-    window.addEventListener('scroll', function() {
-      const sections = document.querySelectorAll('section');
-      const navLinks = document.querySelectorAll('nav a');
-      let current = '';
-      sections.forEach(section => {
-        if (pageYOffset >= (section.offsetTop - 200)) {
-          current = section.getAttribute('id');
+
+    // Scroll suave y nav activo
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+          document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+          anchor.classList.add('active');
         }
+        document.getElementById('nav').classList.remove('show');
       });
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active');
-        }
-      });
+    });
+
+    // Toggle menú responsive
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('nav').classList.toggle('show');
     });
   </script>
 </body>
