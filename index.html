@@ -64,34 +64,6 @@
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-      .logo-container {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo-container img {
-  width: 60px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-.logo-text h1 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--dark);
-}
-
-.logo-text span {
-  font-size: 0.85rem;
-  color: var(--primary-dark);
-}
 
         .menu-toggle {
             display: none;
@@ -148,27 +120,19 @@
         .hero {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+            text-align: center;
             padding: 140px 10% 80px;
-            background: linear-gradient(135deg, var(--secondary) 0%, #fff3e0 100%);
             min-height: 100vh;
             position: relative;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at top right, rgba(255, 167, 38, 0.1) 0%, transparent 50%);
-            z-index: -1;
+            background: linear-gradient(135deg, rgba(46, 84, 115, 0.85), rgba(255, 243, 224, 0.9)),
+                        url('https://raw.githubusercontent.com/Samuel-ce/JT-CONSULTNG/main/logo%20jt.jpg') center/60% no-repeat;
+            background-blend-mode: lighten; /* suaviza la marca de agua */
         }
 
         .hero .text {
-            max-width: 50%;
-            animation: fadeInLeft 1s ease;
+            max-width: 800px;
+            z-index: 1;
         }
 
         .hero h1 {
@@ -183,6 +147,8 @@
             color: var(--gray);
             margin-bottom: 30px;
             max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero .button {
@@ -204,14 +170,6 @@
             background: linear-gradient(90deg, var(--primary-dark), #E65100);
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(255, 167, 38, 0.4);
-        }
-
-        .hero img {
-            max-width: 45%;
-            border-radius: 16px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-            animation: fadeInRight 1s ease;
-            border: 1px solid var(--border);
         }
 
         /* Services & Testimonials Sections */
@@ -425,16 +383,8 @@
         /* Responsive Design */
         @media (max-width: 992px) {
             .hero {
-                flex-direction: column;
-                text-align: center;
                 padding-top: 120px;
                 padding-bottom: 60px;
-            }
-            .hero .text, .hero img {
-                max-width: 100%;
-            }
-            .hero .text {
-                margin-bottom: 40px;
             }
             .hero h1 {
                 font-size: 2.8rem;
@@ -488,6 +438,7 @@
         @media (max-width: 480px) {
             .hero {
                 padding: 110px 5% 50px;
+                background-size: 90%; /* logo más chico en móviles */
             }
             .hero h1 {
                 font-size: 2rem;
@@ -509,13 +460,9 @@
 </head>
 <body>
     <header id="header">
-<div class="logo-container">
-  <img src="https://raw.githubusercontent.com/Samuel-ce/JT-CONSULTNG/main/logo%20jt.jpg" alt="Logo JT">
-  <div class="logo-text">
-    <h1>JT CONSULTING</h1>
-    <span>Asesoría Contable & Tributaria</span>
-  </div>
-</div>
+    <div class="logo">
+        <img src="https://raw.githubusercontent.com/Samuel-ce/JT-CONSULTNG/main/logo%20jt.jpg" alt="Logo JT">
+    </div>
         <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
         <nav id="nav">
             <a href="#hero" id="inicio-button" class="active"><i class="fas fa-home"></i> Inicio</a>
@@ -532,205 +479,4 @@
             <p>Te ofrecemos soluciones fiscales y contables de calidad con profesionales capacitados. ¡Conéctate con JT CONSULTING hoy mismo!</p>
             <a href="https://wa.me/595973877773" class="button">Contáctanos por WhatsApp</a>
         </div>
-  <img src="https://raw.githubusercontent.com/Samuel-ce/JT-CONSULTNG/main/logo%20jt.jpg" alt="Equipo JT CONSULTING">
-        </section>
-    <section class="services" id="services">
-        <div class="section-title">
-            <h2>Servicios de Impuestos</h2>
-            <p>Soluciones fiscales personalizadas para tu negocio</p>
-        </div>
-        <div class="service-grid">
-            <div class="service">
-                <div class="service-icon">
-                    <i class="fas fa-file-invoice-dollar"></i>
-                </div>
-                <h3>¿Qué es el IRP?</h3>
-                <p>El Impuesto a la Renta Personal es aquel que grava las rentas de fuente paraguaya obtenidas por las personas físicas, tales como:</p>
-                <ul>
-                    <li>Las rentas y ganancias del capital, excluidas las rentas gravadas por el IDU.</li>
-                    <li>Las rentas derivadas de la prestación de servicios personales independientes y en relación de dependencia.</li>
-                </ul>
-            </div>
-            <div class="service">
-                <div class="service-icon">
-                    <i class="fas fa-building"></i>
-                </div>
-                <h3>¿Qué es el IRE?</h3>
-                <p>Es el impuesto que grava las rentas, los beneficios o las ganancias de fuente paraguaya que provengan de todo tipo de actividades económicas, incluidas agropecuarias, comerciales, industriales o de servicios.</p>
-                <h4>Regímenes del IRE</h4>
-                <ul>
-                    <li>Régimen General (IRE General)</li>
-                    <li>Simplificado para medianas empresas (SIMPLE)</li>
-                    <li>Simplificado para pequeñas empresas (RESIMPLE)</li>
-                    <li>Renta Neta Presunta</li>
-                    <li>Renta Neta en Operaciones Internacionales</li>
-                    <li>Regímenes Especiales</li>
-                </ul>
-            </div>
-        </div>
     </section>
-
-    <section class="services" id="gestiones">
-        <div class="section-title">
-            <h2>Gestiones Tributarias</h2>
-            <p>Procesos administrativos simplificados para tu tranquilidad</p>
-        </div>
-        <div class="service-grid">
-            <div class="service">
-                <div class="service-icon">
-                    <i class="fas fa-id-card"></i>
-                </div>
-                <h3>Inscripción en el RUC</h3>
-                <p>En JT CONSULTING nos encargamos de todo el proceso de inscripción en el Registro Único de Contribuyentes (RUC) de manera rápida, segura y sin complicaciones. Confía en nuestros profesionales para gestionar tu alta tributaria de forma eficiente y al mejor precio del mercado.</p>
-            </div>
-            <div class="service">
-                <div class="service-icon">
-                    <i class="fas fa-undo"></i>
-                </div>
-                <h3>Recupero de Crédito Fiscal</h3>
-                <p>En JT CONSULTING gestionamos el recupero de créditos fiscales de IVA de manera eficiente y segura, ayudándote a recuperar saldos a favor acumulados ante la DNIT. Nuestro equipo se encarga de todo el proceso para que obtengas lo que te corresponde, sin complicaciones y con el respaldo de profesionales al mejor precio.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials" id="testimonials">
-        <div class="section-title">
-            <h2>Opiniones de Clientes</h2>
-            <p>Lo que dicen nuestros clientes sobre nuestros servicios</p>
-        </div>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-quote">
-                    <i class="fas fa-quote-left"></i>
-                    <p>Excelente servicio, me ayudaron a resolver mis pendientes con la DNIT de manera rápida y profesional. Muy recomendados.</p>
-                    <i class="fas fa-quote-right"></i>
-                </div>
-                <div class="testimonial-info">
-                    <img src="https://via.placeholder.com/50?text=Cliente+1" alt="Cliente 1" class="testimonial-avatar">
-                    <div class="testimonial-details">
-                        <strong>Víctor Manuel Martinez</strong>
-                        <span>Empresario</span>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-quote">
-                    <i class="fas fa-quote-left"></i>
-                    <p>La asesoría contable de JT CONSULTING me ha permitido optimizar mis impuestos y ahorrar costos significativos. Totalmente satisfecha.</p>
-                    <i class="fas fa-quote-right"></i>
-                </div>
-                <div class="testimonial-info">
-                    <img src="https://via.placeholder.com/50?text=Cliente+2" alt="Cliente 2" class="testimonial-avatar">
-                    <div class="testimonial-details">
-                        <strong>Liduvina Cabrera</strong>
-                        <span>Emprendedora</span>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-quote">
-                    <i class="fas fa-quote-left"></i>
-                    <p>Profesionales muy atentos y competentes. Me guiaron en todo el proceso de desbloqueo de RUC por ingreso de oficio. 100% recomendado.</p>
-                    <i class="fas fa-quote-right"></i>
-                </div>
-                <div class="testimonial-info">
-                    <img src="https://via.placeholder.com/50?text=Cliente+3" alt="Cliente 3" class="testimonial-avatar">
-                    <div class="testimonial-details">
-                        <strong>Adalina Oviedo</strong>
-                        <span>Docente</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact-section" id="contact">
-        <div class="section-title">
-            <h2>Contáctanos</h2>
-            <p>Estamos aquí para ayudarte. Conéctate con JT CONSULTING a través de nuestras redes sociales</p>
-        </div>
-        <div class="contact-icons">
-            <a href="https://wa.me/595986537000" target="_blank" class="whatsapp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://www.instagram.com/jt_contable" target="_blank" class="instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="mailto:contacto@jtconsulting.com" target="_blank" class="email">
-                <i class="fas fa-envelope"></i>
-            </a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">JT CONSULTING CDE-CAMPO9</div>
-            <p>&copy; 2025 JT CONSULTING. Todos los derechos reservados.</p>
-            <p>Asesoría contable profesional en Paraguay</p>
-        </div>
-    </footer>
-
-    <script>
-        // Scripts iguales
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    const nav = document.getElementById('nav');
-                    nav.classList.remove('show');
-                    document.querySelectorAll('nav a').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                }
-            });
-        });
-
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            const nav = document.getElementById('nav');
-            nav.classList.toggle('show');
-        });
-
-        document.addEventListener('click', function(event) {
-            const nav = document.getElementById('nav');
-            const menuToggle = document.getElementById('menu-toggle');
-            if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
-                nav.classList.remove('show');
-            }
-        });
-
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav a');
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
-</body>
-</html>
-
