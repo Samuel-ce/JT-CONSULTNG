@@ -207,13 +207,13 @@ header.scrolled {
             box-shadow: 0 6px 20px rgba(255, 167, 38, 0.4);
         }
 
-        .hero img {
-            max-width: 45%;
-            border-radius: 16px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-            animation: fadeInRight 1s ease;
-            border: 1px solid var(--border);
-        }
+.hero img {
+    max-width: 45%;
+    background: transparent; /* Sin fondo */
+    border: none;            /* Sin borde */
+    box-shadow: none;        /* Sin sombra */
+    animation: fadeInRight 1s ease;
+}
 
         /* Services & Testimonials Sections */
         .services, .testimonials {
@@ -734,6 +734,7 @@ header.scrolled {
     </script>
 </body>
 </html>
+
 
 
 
