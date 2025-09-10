@@ -39,26 +39,26 @@
 
         /* Header Styles */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            background: rgba(255, 255, 255, 0.9);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 4px 12px var(--shadow);
-            transition: var(--transition);
-            border-bottom: 1px solid var(--border);
-        }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%; /* más fino */
+    background: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: var(--transition);
+    border-bottom: 1px solid var(--border);
+}
 
-        header.scrolled {
-            padding: 15px 5%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-        }
-
+header.scrolled {
+    padding: 8px 5%; /* aún más fino al hacer scroll */
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+        
         .logo img {
             width: 60px;
             border-radius: 8px;
@@ -508,22 +508,23 @@
     </style>
 </head>
 <body>
-  <div class="logo-container">
-  <img src="logo_transparente-removebg-preview.png" alt="Logo JT">
-  <div class="logo-text">
-    <h1>JT CONSULTING</h1>
-    <span>Asesoría Contable & Tributaria</span>
+<header id="header">
+header {     display: flex;     justify-content: space-between;     align-items: center;     padding: 20px 5%;
+    <img src="logo_transparente-removebg-preview.png" alt="Logo JT">
+    <div class="logo-text">
+      <h1>JT CONSULTING</h1>
+      <span>Asesoría Contable & Tributaria</span>
+    </div>
   </div>
-</div>
-        <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
-        <nav id="nav">
-            <a href="#hero" id="inicio-button" class="active"><i class="fas fa-home"></i> Inicio</a>
-            <a href="#services"><i class="fas fa-file-invoice"></i> Impuestos</a>
-            <a href="#gestiones"><i class="fas fa-tasks"></i> Gestiones</a>
-            <a href="#testimonials"><i class="fas fa-comment-dots"></i> Opiniones</a>
-            <a href="#contact" id="contact-button"><i class="fas fa-info-circle"></i> Contacto</a>
-        </nav>
-    </header>
+  <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+  <nav id="nav">
+    <a href="#hero" id="inicio-button" class="active"><i class="fas fa-home"></i> Inicio</a>
+    <a href="#services"><i class="fas fa-file-invoice"></i> Impuestos</a>
+    <a href="#gestiones"><i class="fas fa-tasks"></i> Gestiones</a>
+    <a href="#testimonials"><i class="fas fa-comment-dots"></i> Opiniones</a>
+    <a href="#contact" id="contact-button"><i class="fas fa-info-circle"></i> Contacto</a>
+  </nav>
+</header>
 
     <section class="hero" id="hero">
         <div class="text">
@@ -732,4 +733,5 @@
     </script>
 </body>
 </html>
+
 
