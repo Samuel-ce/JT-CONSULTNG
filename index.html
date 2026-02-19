@@ -6,204 +6,156 @@
 <title>JT CONSULTING - Asesoría Contable</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style>
-body{font-family:'Poppins',sans-serif;margin:0;background:#2E5473;color:#1a1a1a}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 5%;background:#fff;position:fixed;width:100%;top:0;z-index:1000}
-nav a{margin:0 8px;text-decoration:none;color:#1a1a1a;font-weight:500}
-.lang-btn{margin-left:5px;padding:6px 12px;border-radius:20px;border:none;cursor:pointer}
-section{padding:120px 10% 80px}
-.hero{display:flex;justify-content:space-between;align-items:center}
-.hero img{max-width:40%}
-footer{text-align:center;padding:30px;background:#1a1a1a;color:#fff}
-h1,h2,h3{color:#fff}
-p{color:#f1f1f1}
-a.button{display:inline-block;margin-top:20px;padding:10px 20px;background:#25D366;color:#fff;border-radius:25px;text-decoration:none}
-.service{margin-bottom:30px}
-.section-title{text-align:center;margin-bottom:40px}
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #2E5473;
+    color: white;
+}
+
+header {
+    background: white;
+    color: black;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+select {
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+.hero {
+    padding: 120px 10%;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #A7C957;
+    color: black;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<div>
-<strong>JT CONSULTING</strong><br>
-<span id="subtitulo">Asesoría Contable & Tributaria</span>
-</div>
+    <strong>JT CONSULTING</strong>
+    
+    <nav>
+        <a href="#hero" data-i18n="menu_home">Inicio</a>
+        <a href="#services" data-i18n="menu_services">Servicios</a>
+        <a href="#contact" data-i18n="menu_contact">Contacto</a>
+    </nav>
 
-<nav id="nav">
-<a href="#hero" id="inicio-button"><i class="fas fa-home"></i> Inicio</a>
-<a href="#services"><i class="fas fa-file-invoice"></i> Impuestos</a>
-<a href="#gestiones"><i class="fas fa-tasks"></i> Gestiones</a>
-<a href="#testimonials"><i class="fas fa-comment-dots"></i> Opiniones</a>
-<a href="#contact" id="contact-button"><i class="fas fa-info-circle"></i> Contacto</a>
-
-<button class="lang-btn" onclick="cambiarIdioma('es')">ES</button>
-<button class="lang-btn" onclick="cambiarIdioma('pt')">PT</button>
-</nav>
+    <select id="language-selector">
+        <option value="es">🇪🇸 Español</option>
+        <option value="pt">🇧🇷 Português</option>
+    </select>
 </header>
 
 <section class="hero" id="hero">
-<div>
-<h1 id="hero-titulo">Asesoría Contable Profesional</h1>
-<p id="hero-texto">
-Te ofrecemos soluciones fiscales y contables de calidad con profesionales capacitados.
-</p>
-<a href="https://wa.me/595973877773" class="button" id="hero-btn">Contáctanos por WhatsApp</a>
-</div>
-<img src="logo_transparente-removebg-preview.png">
+    <h1 data-i18n="hero_title">Asesoría Contable Profesional</h1>
+    
+    <p data-i18n="hero_text">
+        Te ofrecemos soluciones fiscales y contables de calidad con profesionales capacitados.
+    </p>
+
+    <a href="https://wa.me/595973877773" class="button" data-i18n="hero_button">
+        Contáctanos por WhatsApp
+    </a>
 </section>
 
-<section id="services">
-<div class="section-title">
-<h2 id="servicios-titulo">Servicios de Impuestos</h2>
-<p id="servicios-sub">Soluciones fiscales personalizadas para tu negocio</p>
-</div>
-
-<div class="service">
-<h3 id="irp-titulo">¿Qué es el IRP?</h3>
-<p id="irp-texto">
-El Impuesto a la Renta Personal grava las rentas obtenidas por personas físicas en Paraguay.
-</p>
-</div>
-
-<div class="service">
-<h3 id="ire-titulo">¿Qué es el IRE?</h3>
-<p id="ire-texto">
-Es el impuesto que grava las ganancias provenientes de actividades económicas.
-</p>
-</div>
+<section id="services" style="padding:80px 10%; text-align:center;">
+    <h2 data-i18n="services_title">Servicios Tributarios</h2>
 </section>
 
-<section id="gestiones">
-<div class="section-title">
-<h2 id="gestiones-titulo">Gestiones Tributarias</h2>
-</div>
-
-<div class="service">
-<h3 id="ruc-titulo">Inscripción en el RUC</h3>
-</div>
-
-<div class="service">
-<h3 id="credito-titulo">Recupero de Crédito Fiscal</h3>
-</div>
+<section id="contact" style="padding:80px 10%; text-align:center;">
+    <h2 data-i18n="contact_title">Contáctanos</h2>
 </section>
-
-<section id="testimonials">
-<div class="section-title">
-<h2 id="opiniones-titulo">Opiniones de Clientes</h2>
-</div>
-</section>
-
-<section id="contact">
-<div class="section-title">
-<h2 id="contacto-titulo">Contáctanos</h2>
-<p id="contacto-sub">Estamos aquí para ayudarte.</p>
-</div>
-</section>
-
-<footer>
-<p id="footer-copy">© 2025 JT CONSULTING. Todos los derechos reservados.</p>
-<p id="footer-pais">Asesoría contable profesional en Paraguay</p>
-</footer>
 
 <script>
 
-const textos = {
+const translations = {
 
-es:{
-subtitulo:"Asesoría Contable & Tributaria",
-inicio:"Inicio",
-impuestos:"Impuestos",
-gestiones:"Gestiones",
-opiniones:"Opiniones",
-contacto:"Contacto",
-heroTitulo:"Asesoría Contable Profesional",
-heroTexto:"Te ofrecemos soluciones fiscales y contables de calidad con profesionales capacitados.",
-heroBtn:"Contáctanos por WhatsApp",
-serviciosTitulo:"Servicios de Impuestos",
-serviciosSub:"Soluciones fiscales personalizadas para tu negocio",
-irpTitulo:"¿Qué es el IRP?",
-irpTexto:"El Impuesto a la Renta Personal grava las rentas obtenidas por personas físicas en Paraguay.",
-ireTitulo:"¿Qué es el IRE?",
-ireTexto:"Es el impuesto que grava las ganancias provenientes de actividades económicas.",
-gestionesTitulo:"Gestiones Tributarias",
-rucTitulo:"Inscripción en el RUC",
-creditoTitulo:"Recupero de Crédito Fiscal",
-opinionesTitulo:"Opiniones de Clientes",
-contactoTitulo:"Contáctanos",
-contactoSub:"Estamos aquí para ayudarte.",
-footerCopy:"© 2025 JT CONSULTING. Todos los derechos reservados.",
-footerPais:"Asesoría contable profesional en Paraguay"
-},
+    es: {
+        menu_home: "Inicio",
+        menu_services: "Servicios",
+        menu_contact: "Contacto",
 
-pt:{
-subtitulo:"Assessoria Contábil & Tributária",
-inicio:"Início",
-impuestos:"Impostos",
-gestiones:"Gestões",
-opiniones:"Depoimentos",
-contacto:"Contato",
-heroTitulo:"Assessoria Contábil Profissional",
-heroTexto:"Oferecemos soluções fiscais e contábeis de qualidade com profissionais capacitados.",
-heroBtn:"Fale conosco pelo WhatsApp",
-serviciosTitulo:"Serviços de Impostos",
-serviciosSub:"Soluções fiscais personalizadas para o seu negócio",
-irpTitulo:"O que é o IRP?",
-irpTexto:"O Imposto de Renda Pessoal incide sobre rendas obtidas por pessoas físicas no Paraguai.",
-ireTitulo:"O que é o IRE?",
-ireTexto:"É o imposto que incide sobre lucros provenientes de atividades econômicas.",
-gestionesTitulo:"Gestões Tributárias",
-rucTitulo:"Inscrição no RUC",
-creditoTitulo:"Recuperação de Crédito Fiscal",
-opinionesTitulo:"Depoimentos de Clientes",
-contactoTitulo:"Fale Conosco",
-contactoSub:"Estamos aqui para ajudar você.",
-footerCopy:"© 2025 JT CONSULTING. Todos os direitos reservados.",
-footerPais:"Assessoria contábil profissional no Paraguai"
-}
+        hero_title: "Asesoría Contable Profesional",
+        hero_text: "Te ofrecemos soluciones fiscales y contables de calidad con profesionales capacitados.",
+        hero_button: "Contáctanos por WhatsApp",
 
+        services_title: "Servicios Tributarios",
+        contact_title: "Contáctanos"
+    },
+
+    pt: {
+        menu_home: "Início",
+        menu_services: "Serviços",
+        menu_contact: "Contato",
+
+        hero_title: "Assessoria Contábil Profissional",
+        hero_text: "Oferecemos soluções fiscais e contábeis de alta qualidade com profissionais capacitados.",
+        hero_button: "Fale conosco pelo WhatsApp",
+
+        services_title: "Serviços Tributários",
+        contact_title: "Fale Conosco"
+    }
 };
 
-function cambiarIdioma(idioma){
+const selector = document.getElementById("language-selector");
 
-document.getElementById("subtitulo").innerText=textos[idioma].subtitulo;
-document.getElementById("inicio-button").innerHTML='<i class="fas fa-home"></i> '+textos[idioma].inicio;
-document.querySelector('#nav a:nth-child(2)').innerHTML='<i class="fas fa-file-invoice"></i> '+textos[idioma].impuestos;
-document.querySelector('#nav a:nth-child(3)').innerHTML='<i class="fas fa-tasks"></i> '+textos[idioma].gestiones;
-document.querySelector('#nav a:nth-child(4)').innerHTML='<i class="fas fa-comment-dots"></i> '+textos[idioma].opiniones;
-document.getElementById("contact-button").innerHTML='<i class="fas fa-info-circle"></i> '+textos[idioma].contacto;
+function changeLanguage(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+        const key = element.getAttribute("data-i18n");
+        if (translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
 
-document.getElementById("hero-titulo").innerText=textos[idioma].heroTitulo;
-document.getElementById("hero-texto").innerText=textos[idioma].heroTexto;
-document.getElementById("hero-btn").innerText=textos[idioma].heroBtn;
-
-document.getElementById("servicios-titulo").innerText=textos[idioma].serviciosTitulo;
-document.getElementById("servicios-sub").innerText=textos[idioma].serviciosSub;
-
-document.getElementById("irp-titulo").innerText=textos[idioma].irpTitulo;
-document.getElementById("irp-texto").innerText=textos[idioma].irpTexto;
-
-document.getElementById("ire-titulo").innerText=textos[idioma].ireTitulo;
-document.getElementById("ire-texto").innerText=textos[idioma].ireTexto;
-
-document.getElementById("gestiones-titulo").innerText=textos[idioma].gestionesTitulo;
-document.getElementById("ruc-titulo").innerText=textos[idioma].rucTitulo;
-document.getElementById("credito-titulo").innerText=textos[idioma].creditoTitulo;
-
-document.getElementById("opiniones-titulo").innerText=textos[idioma].opinionesTitulo;
-
-document.getElementById("contacto-titulo").innerText=textos[idioma].contactoTitulo;
-document.getElementById("contacto-sub").innerText=textos[idioma].contactoSub;
-
-document.getElementById("footer-copy").innerText=textos[idioma].footerCopy;
-document.getElementById("footer-pais").innerText=textos[idioma].footerPais;
-
+    document.documentElement.lang = lang;
+    localStorage.setItem("selectedLanguage", lang);
 }
 
-cambiarIdioma("es");
+selector.addEventListener("change", (e) => {
+    changeLanguage(e.target.value);
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+
+    const savedLanguage = localStorage.getItem("selectedLanguage");
+
+    if (savedLanguage) {
+        selector.value = savedLanguage;
+        changeLanguage(savedLanguage);
+    } else {
+        changeLanguage("es");
+    }
+
+});
 
 </script>
 
